@@ -1,19 +1,19 @@
 class Jugador {
-  int idJugador;
+  int id;
   String nombre;
   DateTime fechaReg;
 
-  Jugador({this.idJugador, this.nombre, this.fechaReg});
+  Jugador({this.id, this.nombre, this.fechaReg});
 
   factory Jugador.fromJson(Map<String, dynamic> parsedJson) {
     return Jugador(
-        idJugador: parsedJson['idJugador'],
+        id: parsedJson['id'],
         nombre: parsedJson['nombre'],
         fechaReg: parsedJson['fechaReg']);
   }
 
   Map<String, dynamic> toJson() => {
-        'idJugador': idJugador,
+        'id': id,
         'nombre': nombre,
         'fechaReg': fechaReg,
       };
