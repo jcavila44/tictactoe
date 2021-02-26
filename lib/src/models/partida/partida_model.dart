@@ -1,16 +1,20 @@
 class Partida {
-  int id_partida;
-  String nombre;
+  int idPartida;
+  String idDimension;
+  DateTime fechaReg;
 
-  Partida({this.id_partida, this.nombre});
+  Partida({this.idPartida, this.idDimension, this.fechaReg});
 
   factory Partida.fromJson(Map<String, dynamic> parsedJson) {
     return Partida(
-        id_partida: parsedJson['id_partida'], nombre: parsedJson['nombre']);
+        idPartida: parsedJson['idPartida'],
+        idDimension: parsedJson['idDimension'],
+        fechaReg: parsedJson['fechaReg']);
   }
 
   Map<String, dynamic> toJson() => {
-        'id_partida': id_partida,
-        'nombre': nombre,
+        'idPartida': idPartida,
+        'idDimension': idDimension,
+        'fechaReg': fechaReg,
       };
 }
