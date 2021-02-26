@@ -1,11 +1,11 @@
-class Jugador {
+class Tablero {
   int id;
   String dimencion;
 
-  Jugador({this.id, this.dimencion});
+  Tablero({this.id, this.dimencion});
 
-  factory Jugador.fromJson(Map<String, dynamic> parsedJson) {
-    return Jugador(id: parsedJson['id'], dimencion: parsedJson['dimencion']);
+  factory Tablero.fromJson(Map<String, dynamic> parsedJson) {
+    return Tablero(id: parsedJson['id'], dimencion: parsedJson['dimencion']);
   }
 
   Map<String, dynamic> toJson() => {'id': id, 'dimencion': dimencion};
