@@ -1,17 +1,16 @@
 class Puntos {
-  int idPuntos;
+  int id;
   String codigo;
   int valor;
 
-  Puntos({this.idPuntos, this.codigo, this.valor});
+  Puntos({this.id, this.codigo, this.valor});
 
   factory Puntos.fromJson(Map<String, dynamic> parsedJson) {
     return Puntos(
-        idPuntos: parsedJson['idPuntos'],
+        id: parsedJson['id'],
         codigo: parsedJson['codigo'],
         valor: parsedJson['valor']);
   }
 
-  Map<String, dynamic> toJson() =>
-      {'idPuntos': idPuntos, 'codigo': codigo, 'valor': valor};
+  Map<String, dynamic> toJson() => {'id': id, 'codigo': codigo, 'valor': valor};
 }
