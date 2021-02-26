@@ -1,20 +1,22 @@
+import 'package:tictactoe/src/models/utils/tablero_model.dart';
+
 class Partida {
-  int idPartida;
-  String idDimension;
+  int id;
+  Tablero tablero;
   DateTime fechaReg;
 
-  Partida({this.idPartida, this.idDimension, this.fechaReg});
+  Partida({this.id, this.tablero, this.fechaReg});
 
   factory Partida.fromJson(Map<String, dynamic> parsedJson) {
     return Partida(
-        idPartida: parsedJson['idPartida'],
-        idDimension: parsedJson['idDimension'],
+        id: parsedJson['id'],
+        tablero: Tablero.fromJson(parsedJson['tablero']),
         fechaReg: parsedJson['fechaReg']);
   }
 
   Map<String, dynamic> toJson() => {
-        'idPartida': idPartida,
-        'idDimension': idDimension,
+        'id': id,
+        'tablero': tablero,
         'fechaReg': fechaReg,
       };
 }
