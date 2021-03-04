@@ -1,19 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:tictactoe/src/view/pick.dart';
+import 'package:tictactoe/src/view/pickView.dart';
 import 'package:tictactoe/src/view/theme.dart';
-import 'package:tictactoe/src/view/logo.dart';
-import 'package:tictactoe/src/bloc/btn.dart';
-import 'package:tictactoe/src/bloc/provider.dart';
-import 'package:tictactoe/src/bloc/board.dart';
-import 'package:tictactoe/src/bloc/sound.dart';
-import 'package:tictactoe/src/bloc/alert.dart';
+import 'package:tictactoe/src/view/logoView.dart';
 
 class StartPage extends StatelessWidget {
-  final boardService = locator<BoardService>();
-  final soundService = locator<SoundService>();
-  final alertService = locator<AlertService>();
-
   StartPage({Key key}) : super(key: key);
 
   @override
@@ -63,11 +54,8 @@ class StartPage extends StatelessWidget {
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
-                      Btn(
-                        onTap: () {
-                          boardService.gameMode$.add(GameMode.Multi);
-                          soundService.playSound('click');
-
+                      ElevatedButton(
+                        onPressed: () {
                           Navigator.push(
                             context,
                             CupertinoPageRoute(
@@ -75,17 +63,7 @@ class StartPage extends StatelessWidget {
                             ),
                           );
                         },
-                        height: 40,
-                        width: 250,
-                        borderRadius: 250,
-                        color: Colors.white,
-                        child: Text(
-                          "Jugar".toUpperCase(),
-                          style: TextStyle(
-                              color: Colors.black.withOpacity(.8),
-                              fontSize: 16,
-                              fontWeight: FontWeight.w700),
-                        ),
+                        child: Text('Jugar'),
                       ),
                     ]),
               ),
