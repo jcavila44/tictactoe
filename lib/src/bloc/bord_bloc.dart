@@ -8,7 +8,7 @@ part 'bord_event.dart';
 part 'bord_state.dart';
 
 class BordBloc extends Bloc<BordEvent, BordState> {
-  List<int> _bordState = [55, 55, 55, 55, 55, 55, 55, 55, 55];
+  List<int> _bordState = [5, 5, 5, 5, 5, 5, 5, 5, 5];
   bool playerOneTurn = true;
   int currentMove = 0;
   int winner;

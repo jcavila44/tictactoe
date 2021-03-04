@@ -61,36 +61,34 @@ int checkSumDigonal(List<int> bord) {
   } else if (value1 == 3 || value2 == 3) {
     value = 3;
   } else {
-    value = 55;
+    value = 5;
   }
   return value;
 }
-
-// Minimax Algo for the best move
 
 int minimax(List<int> bord, int depth, bool isMaximizing) {
   if (checkWinner(bord) != null) {
     return checkWinner(bord);
   }
   if (isMaximizing) {
-    int bestScore = 55;
+    int bestScore = 5;
     for (int i = 0; i < 9; i++) {
       if (bord[i] != 0 && bord[i] != 1) {
         bord[i] = 1;
         int score = minimax(bord, depth + 1, false);
-        bord[i] = 55;
+        bord[i] = 5;
         bestScore = min(score, bestScore);
       }
     }
 
     return bestScore;
   } else {
-    int bestScore = -55;
+    int bestScore = -5;
     for (int i = 0; i < 9; i++) {
       if (bord[i] != 0 && bord[i] != 1) {
         bord[i] = 0;
         int score = minimax(bord, depth + 1, true);
-        bord[i] = 55;
+        bord[i] = 5;
         bestScore = max(score, bestScore);
       }
     }
