@@ -6,9 +6,9 @@
     "configurations": [
     {
         "name": "tictactoe",
-        "cwd": "tictactoe",
         "request": "launch",
-        "type": "dart"
+        "type": "dart",
+        "flutterMode": "debug"
     }
     ]
 }
