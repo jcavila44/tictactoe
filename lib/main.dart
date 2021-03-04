@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:tictactoe/src/view/start.dart';
+import 'package:tictactoe/src/bloc/provider.dart';
 
 void main() {
+  setupLocator();
   runApp(MyApp());
 }
 
