@@ -22,7 +22,22 @@ class _PickPageState extends State<PickShape> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        body: Container(),
+        body: Container(
+          width: MediaQuery.of(context).size.width,
+          child: Column(
+              mainAxisSize: MainAxisSize.max,
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: <Widget>[
+                Text(
+                  "Ingresar jugadores",
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 30,
+                      fontWeight: FontWeight.w700,
+                      fontFamily: 'DancingScript'),
+                ),
+              ]),
+        ),
       ),
     );
   }
