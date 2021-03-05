@@ -5,3 +5,4 @@ analyzer:
 linter: 
   rules:
     - avoid_catching_errors
+    - avoid_void_async
