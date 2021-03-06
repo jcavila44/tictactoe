@@ -9,7 +9,7 @@ class StartPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return WillPopScope(
       onWillPop: () {
-        Future.value(false);
+        return Future.value(false);
       },
       child: SafeArea(
         child: Scaffold(
