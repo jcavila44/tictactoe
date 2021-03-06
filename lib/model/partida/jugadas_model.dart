@@ -1,5 +1,5 @@
-import '../jugador/jugador_model.dart';
-import 'partida_model.dart';
+import 'package:tictactoe/model/jugador/jugador_model.dart';
+import 'package:tictactoe/model/partida/partida_model.dart';
 
 class Jugadas {
   int id;

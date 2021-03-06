@@ -1,4 +1,4 @@
-import 'package:tictactoe/src/models/utils/tablero_model.dart';
+import 'package:tictactoe/model/utils/tablero_model.dart';
 
 class Partida {
   int id;
