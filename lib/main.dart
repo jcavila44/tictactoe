@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tictactoe/view/start.dart';
+import 'package:tictactoe/view/start_view.dart';
 
 void main() {
   runApp(MyApp());
