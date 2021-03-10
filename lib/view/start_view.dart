@@ -1,9 +1,31 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:tictactoe/theme/theme.dart';
+import 'package:tictactoe/view/form_view.dart';
 
-class StartPage extends StatelessWidget {
-  StartPage({Key key}) : super(key: key);
+class StartPage extends StatefulWidget {
+  @override
+  _StartPageState createState() => _StartPageState();
+}
+
+class _StartPageState extends State<StartPage> {
+// class StartPage extends StatelessWidget {
+
+  // StartPage({Key key}) : super(key: key);
+
+  @override
+  void initState() {
+    Future.delayed(
+      Duration(milliseconds: 5000),
+      () => Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => FormView(),
+        ),
+      ),
+    );
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -42,6 +64,20 @@ class StartPage extends StatelessWidget {
                             fontSize: 65,
                             fontWeight: FontWeight.w700,
                             fontFamily: 'DancingScript'),
+                      ),
+                      SizedBox(
+                        height: 20,
+                      ),
+                      CircularProgressIndicator(
+                        valueColor:
+                            new AlwaysStoppedAnimation<Color>(Colors.white),
+                      ),
+                      SizedBox(
+                        height: 20,
+                      ),
+                      Text(
+                        'Bienvenido',
+                        style: TextStyle(color: Colors.white, fontSize: 20),
                       ),
                     ],
                   ),

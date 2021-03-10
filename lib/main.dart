@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+// import 'package:tictactoe/view/splash_view.dart';
 import 'package:tictactoe/view/start_view.dart';
+// import 'package:tictactoe/view/start_view.dart';
 
 void main() {
   runApp(MyApp());
@@ -11,6 +13,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData(fontFamily: 'Poppins'),
       debugShowCheckedModeBanner: false,
+      // home: SplashScreen(),
       home: StartPage(),
     );
   }
