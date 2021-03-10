@@ -69,8 +69,7 @@ class _StartPageState extends State<StartPage> {
                         height: 20,
                       ),
                       CircularProgressIndicator(
-                        valueColor:
-                            new AlwaysStoppedAnimation<Color>(Colors.white),
+                        valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
                       ),
                       SizedBox(
                         height: 20,

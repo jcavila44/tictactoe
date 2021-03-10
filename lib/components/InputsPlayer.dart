@@ -5,9 +5,12 @@ import 'package:flutter/material.dart';
 class InputPlayer extends StatelessWidget {
   final String placeholder;
   final double placeholderSize;
+  final controllerFunct;
 
   const InputPlayer(
-      {@required this.placeholder, @required this.placeholderSize});
+      {@required this.placeholder,
+      @required this.placeholderSize,
+      @required this.controllerFunct});
 
   @override
   Widget build(BuildContext context) {
@@ -27,6 +30,7 @@ class InputPlayer extends StatelessWidget {
           fontSize: placeholderSize,
           color: Colors.black,
         ),
+        controller: controllerFunct,
         keyboardType: TextInputType.text,
         decoration: InputDecoration(
           fillColor: Colors.white,
