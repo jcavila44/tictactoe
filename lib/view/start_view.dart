@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:tictactoe/theme/theme.dart';
 import 'package:tictactoe/view/form_view.dart';
+import 'package:tictactoe/components/logo.dart';
 
 class StartPage extends StatefulWidget {
   @override
@@ -65,6 +66,7 @@ class _StartPageState extends State<StartPage> {
                             fontWeight: FontWeight.w700,
                             fontFamily: 'DancingScript'),
                       ),
+                      Logo(),
                       SizedBox(
                         height: 20,
                       ),
