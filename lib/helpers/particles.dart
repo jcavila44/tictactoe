@@ -63,7 +63,7 @@ class _ParticleState extends State<Particle> with TickerProviderStateMixin {
     animation = Tween<double>(begin: 0, end: 1).animate(controller)
       ..addListener(() {
         setState(() {
-          for (int index = 0; index < offsets.length; index++) {
+          for (var index = 0; index < offsets.length; index++) {
             if (direction[index]) {
               randValue = -speedOfparticle;
             } else {

@@ -1,7 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:tictactoe/components/result_again_button.dart';
 import 'package:tictactoe/helpers/CustomTheme.dart';
 import 'package:tictactoe/helpers/particles.dart';
+import 'package:tictactoe/theme/theme.dart';
 import 'package:tictactoe/view/HomeScreen.dart';
 
 class Results extends StatefulWidget {
@@ -44,13 +46,16 @@ class _ResultsState extends State<Results> with CustomTheme {
           Container(
             decoration: BoxDecoration(
               gradient: LinearGradient(
-                begin: Alignment.topLeft,
-                end: Alignment.bottomRight,
-                colors: sbgColor,
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+                stops: [0.1, 0.75],
+                colors: [
+                  MyTheme.blue,
+                  MyTheme.violet,
+                ],
               ),
             ),
           ),
-          Particle(size.height, size.width),
           Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.center,
@@ -66,7 +71,7 @@ class _ResultsState extends State<Results> with CustomTheme {
               Text(
                 winningText,
                 style: TextStyle(
-                  fontFamily: "Acme",
+                  fontFamily: 'Acme',
                   color: Colors.white,
                   fontSize: 30,
                 ),
@@ -74,35 +79,15 @@ class _ResultsState extends State<Results> with CustomTheme {
               SizedBox(
                 height: 50,
               ),
-              InkWell(
+              AgainButton(
                 onTap: () {
-                  Navigator.of(context).popUntil(
-                    (route) => route.isFirst,
-                  );
+                  print('nitido');
 
-                  // Navigator.push(
-                  //   context,
-                  //   MaterialPageRoute(builder: (context) => HomeScreen()),
-                  // );
+                  Navigator.of(context).pushNamedAndRemoveUntil(
+                    '/',
+                    (Route<dynamic> route) => false,
+                  );
                 },
-                child: Container(
-                  height: 70,
-                  width: 70,
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    gradient: LinearGradient(
-                      colors: [
-                        Color(0xfff5af19),
-                        Color(0xfff12711),
-                      ],
-                    ),
-                  ),
-                  child: Icon(
-                    Icons.replay,
-                    color: Colors.white,
-                    size: 50,
-                  ),
-                ),
               ),
             ],
           )

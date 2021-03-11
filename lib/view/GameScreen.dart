@@ -5,6 +5,7 @@ import 'package:tictactoe/components/GameScreen/Bord.dart';
 import 'package:tictactoe/components/GameScreen/Players.dart';
 import 'package:tictactoe/helpers/CustomTheme.dart';
 import 'package:tictactoe/helpers/particles.dart';
+import 'package:tictactoe/theme/theme.dart';
 
 class GameScreen extends StatefulWidget {
   final String secondPlayer;
@@ -29,9 +30,13 @@ class _GameScreenState extends State<GameScreen> with CustomTheme {
             Container(
               decoration: BoxDecoration(
                 gradient: LinearGradient(
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
-                  colors: sbgColor,
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                  stops: [0.1, 0.75],
+                  colors: [
+                    MyTheme.blue,
+                    MyTheme.violet,
+                  ],
                 ),
               ),
             ),

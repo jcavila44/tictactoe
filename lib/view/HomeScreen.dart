@@ -71,12 +71,14 @@ class _Homeviewtate extends State<HomeScreen> with CustomTheme {
                               setState(() {
                                 _nickPlayer1 = nick1.text;
                                 _nickPlayer2 = nick2.text;
+                                nick1.clear();
+                                nick2.clear();
                               });
 
                               Navigator.of(context).push(
                                 CupertinoPageRoute(
                                   builder: (context) => GameScreen(
-                                      secondPlayer: "Player 2",
+                                      secondPlayer: 'Player 2',
                                       nickPlayer1: _nickPlayer1,
                                       nickPlayer2: _nickPlayer2),
                                 ),
