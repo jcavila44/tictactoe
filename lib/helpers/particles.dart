@@ -116,7 +116,7 @@ class _ParticleState extends State<Particle> with TickerProviderStateMixin {
             // });
           },
           child: CustomPaint(
-            child: Container(),
+            //child: Container(), //Container vacio
             painter: MyPainter(
               offsets,
               pointerOffset,
@@ -164,7 +164,7 @@ class MyPainter extends CustomPainter {
 
   @override
   void paint(Canvas canvas, Size size) {
-    for (int i = 0; i < list.length; i++) {
+    for (var i = 0; i < list.length; i++) {
       // lineOpacity =
       //     1 - (list[i].distance - this.pointerOffset.distance).abs() / 300;
       // if ((pointerOffset.dx - list[i].dx).abs() < 150 &&

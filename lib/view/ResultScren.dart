@@ -2,9 +2,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:tictactoe/components/result_again_button.dart';
 import 'package:tictactoe/helpers/CustomTheme.dart';
-import 'package:tictactoe/helpers/particles.dart';
+//import 'package:tictactoe/helpers/particles.dart';
 import 'package:tictactoe/theme/theme.dart';
-import 'package:tictactoe/view/HomeScreen.dart';
+//import 'package:tictactoe/view/HomeScreen.dart';
 
 class Results extends StatefulWidget {
   final int result;
@@ -25,14 +25,14 @@ class _ResultsState extends State<Results> with CustomTheme {
   @override
   void initState() {
     if (widget.result == 1) {
-      winningImage = "assets/win.png";
-      winningText = "Ganador: " + widget.nickPlayer1;
+      winningImage = 'assets/win.png';
+      winningText = 'Ganador: ' + widget.nickPlayer1;
     } else if (widget.result == -1) {
-      winningImage = "assets/win.png";
-      winningText = "Ganador: " + widget.nickPlayer2;
+      winningImage = 'assets/win.png';
+      winningText = 'Ganador: ' + widget.nickPlayer2;
     } else {
-      winningImage = "assets/draw.png";
-      winningText = "Empate!";
+      winningImage = 'assets/draw.png';
+      winningText = 'Empate!';
     }
     super.initState();
   }

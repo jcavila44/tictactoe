@@ -79,7 +79,7 @@ class _FormViewState extends State<FormView> {
                                 Navigator.of(context).push(
                                   CupertinoPageRoute(
                                     builder: (context) => GameScreen(
-                                        secondPlayer: "Player 2",
+                                        secondPlayer: 'Player 2',
                                         nickPlayer1: _nickPlayer1,
                                         nickPlayer2: _nickPlayer2),
                                   ),
@@ -87,7 +87,7 @@ class _FormViewState extends State<FormView> {
                               } else {
                                 Fluttertoast.showToast(
                                     msg:
-                                        "Los Nick jugador #1 y Nick jugador #2 deben estar llenos.",
+                                        'Los Nick jugador #1 y Nick jugador #2 deben estar llenos.',
                                     toastLength: Toast.LENGTH_SHORT,
                                     gravity: ToastGravity.CENTER,
                                     timeInSecForIosWeb: 1,

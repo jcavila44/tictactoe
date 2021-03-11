@@ -20,7 +20,7 @@ int checkWinner(List<int> bord) {
 int checkSumRow(List<int> bord) {
   int value;
 
-  for (int i = 0; i < 7; i += 3) {
+  for (var i = 0; i < 7; i += 3) {
     value = 0;
     bord.getRange(i, i + 3).forEach((element) => value += element);
     if (value == 0 || value == 3) {
@@ -32,7 +32,7 @@ int checkSumRow(List<int> bord) {
 }
 
 int checkSumOfBord(List<int> bord) {
-  int value = 0;
+  var value = 0;
 
   bord.forEach((element) => value += element);
   return value;
@@ -40,7 +40,7 @@ int checkSumOfBord(List<int> bord) {
 
 int checkSumColumn(List<int> bord) {
   int value;
-  for (int i = 0; i < 3; i++) {
+  for (var i = 0; i < 3; i++) {
     value = bord[i] + bord[i + 3] + bord[i + 6];
 
     if (value == 0 || value == 3) {
@@ -73,11 +73,11 @@ int minimax(List<int> bord, int depth, bool isMaximizing) {
     return checkWinner(bord);
   }
   if (isMaximizing) {
-    int bestScore = 55;
-    for (int i = 0; i < 9; i++) {
+    var bestScore = 55;
+    for (var i = 0; i < 9; i++) {
       if (bord[i] != 0 && bord[i] != 1) {
         bord[i] = 1;
-        int score = minimax(bord, depth + 1, false);
+        var score = minimax(bord, depth + 1, false);
         bord[i] = 55;
         bestScore = min(score, bestScore);
       }
@@ -85,11 +85,11 @@ int minimax(List<int> bord, int depth, bool isMaximizing) {
 
     return bestScore;
   } else {
-    int bestScore = -55;
-    for (int i = 0; i < 9; i++) {
+    var bestScore = -55;
+    for (var i = 0; i < 9; i++) {
       if (bord[i] != 0 && bord[i] != 1) {
         bord[i] = 0;
-        int score = minimax(bord, depth + 1, true);
+        var score = minimax(bord, depth + 1, true);
         bord[i] = 55;
         bestScore = max(score, bestScore);
       }
