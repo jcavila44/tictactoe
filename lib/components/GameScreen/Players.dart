@@ -4,17 +4,10 @@ import 'package:tictactoe/bloc/bord_bloc.dart';
 import 'package:tictactoe/helpers/CustomTheme.dart';
 
 class Players extends StatefulWidget {
-  final bool isPlayerTwoBot;
-  final int difficulty;
-
   final String nickPlayer1;
   final String nickPlayer2;
 
-  Players(
-      {@required this.isPlayerTwoBot,
-      @required this.difficulty,
-      @required this.nickPlayer1,
-      @required this.nickPlayer2});
+  Players({@required this.nickPlayer1, @required this.nickPlayer2});
   @override
   _PlayersState createState() => _PlayersState();
 }
@@ -27,22 +20,9 @@ class _PlayersState extends State<Players> with CustomTheme {
 
   @override
   void initState() {
-    if (widget.isPlayerTwoBot) {
-      if (widget.difficulty == 0) {
-        playerTwoAvatar = "assets/easyBotDp.png";
-        playerTwoName = "Easy Bot";
-      } else if (widget.difficulty == 1) {
-        playerTwoAvatar = "assets/mediumBotDp.png";
-        playerTwoName = "Medium Bot";
-      } else {
-        playerTwoAvatar = "assets/hardBotDp.png";
-        playerTwoName = "hard Bot";
-      }
-    } else {
-      playerTwoAvatar = "assets/p1.jpg";
-      playerOneName = widget.nickPlayer1;
-      playerTwoName = widget.nickPlayer2;
-    }
+    playerTwoAvatar = "assets/p1.jpg";
+    playerOneName = widget.nickPlayer1;
+    playerTwoName = widget.nickPlayer2;
 
     super.initState();
   }

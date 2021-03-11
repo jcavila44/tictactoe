@@ -77,8 +77,6 @@ class _Homeviewtate extends State<HomeScreen> with CustomTheme {
                                 CupertinoPageRoute(
                                   builder: (context) => GameScreen(
                                       secondPlayer: "Player 2",
-                                      botPlayer: false,
-                                      difficultyLevel: -1,
                                       nickPlayer1: _nickPlayer1,
                                       nickPlayer2: _nickPlayer2),
                                 ),
@@ -98,61 +96,3 @@ class _Homeviewtate extends State<HomeScreen> with CustomTheme {
     );
   }
 }
-
-//   Widget build(BuildContext context) {
-//     final size = MediaQuery.of(context).size;
-//     return Scaffold(
-//       body: Stack(
-//         children: [
-//           Container(
-//             decoration: BoxDecoration(
-//               gradient: LinearGradient(
-//                 begin: Alignment.topLeft,
-//                 end: Alignment.bottomRight,
-//                 colors: sbgColor,
-//               ),
-//             ),
-//           ),
-//           Particle(size.height, size.width),
-//           Column(
-//             mainAxisAlignment: MainAxisAlignment.center,
-//             crossAxisAlignment: CrossAxisAlignment.center,
-//             children: [
-//               SizedBox(
-//                 width: size.width,
-//               ),
-//               EntryText(),
-//               SizedBox(
-//                 height: 50,
-//               ),
-//               // GameOption(
-//               //   title: "Single Player",
-//               //   onTap: () {
-//               //     Navigator.of(context).push(
-//               //       CupertinoPageRoute(
-//               //         builder: (context) => BotScreen(),
-//               //       ),
-//               //     );
-//               //   },
-//               // ),
-//               SizedBox(
-//                 height: 40,
-//               ),
-//               GameOption(
-//                 title: "MultiPlayer",
-//                 onTap: () {
-//                   Navigator.of(context).push(
-//                     CupertinoPageRoute(
-//                       builder: (context) => GameScreen(
-//                           secondPlayer: "Player 2", botPlayer: false),
-//                     ),
-//                   );
-//                 },
-//               ),
-//             ],
-//           ),
-//         ],
-//       ),
-//     );
-//   }
-// }

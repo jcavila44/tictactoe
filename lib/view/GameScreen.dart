@@ -10,14 +10,7 @@ class GameScreen extends StatefulWidget {
   final String secondPlayer;
   final String nickPlayer1;
   final String nickPlayer2;
-  final bool botPlayer;
-  final int difficultyLevel;
-  GameScreen(
-      {this.secondPlayer,
-      this.botPlayer,
-      this.difficultyLevel,
-      this.nickPlayer1,
-      this.nickPlayer2});
+  GameScreen({this.secondPlayer, this.nickPlayer1, this.nickPlayer2});
 
   @override
   _GameScreenState createState() => _GameScreenState();
@@ -74,18 +67,14 @@ class _GameScreenState extends State<GameScreen> with CustomTheme {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Players(
-                      isPlayerTwoBot: widget.botPlayer,
-                      difficulty: widget.difficultyLevel,
                       nickPlayer1: widget.nickPlayer1,
                       nickPlayer2: widget.nickPlayer2),
                   SizedBox(
                     width: size.width,
                   ),
                   Bord(
-                    widget.botPlayer,
                     widget.nickPlayer1,
                     widget.nickPlayer2,
-                    difficultyLevel: widget.difficultyLevel,
                   ),
                 ],
               ),

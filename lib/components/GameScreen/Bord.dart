@@ -7,12 +7,9 @@ import 'package:tictactoe/helpers/CustomTheme.dart';
 import 'package:tictactoe/view/ResultScren.dart';
 
 class Bord extends StatefulWidget {
-  final bool botPlayer;
-  final int difficultyLevel;
   final String nickPlayer1;
   final String nickPlayer2;
-  Bord(this.botPlayer, this.nickPlayer1, this.nickPlayer2,
-      {this.difficultyLevel});
+  Bord(this.nickPlayer1, this.nickPlayer2);
   @override
   _BordState createState() => _BordState();
 }
@@ -24,8 +21,6 @@ class _BordState extends State<Bord> with CustomTheme {
   @override
   Widget build(BuildContext context) {
     bordBloc = BlocProvider.of<BordBloc>(context);
-    bordBloc.isPlayer2Bot = widget.botPlayer;
-    bordBloc.difficultyLevel = widget.difficultyLevel;
     final size = MediaQuery.of(context).size;
 
     return Container(
