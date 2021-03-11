@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:tictactoe/theme/theme.dart';
 // import 'package:tictactoe/view/form_view.dart';
-import 'package:tictactoe/screens/HomeScreen.dart';
+import 'package:tictactoe/view/HomeScreen.dart';
 
 class StartPage extends StatefulWidget {
   @override

@@ -24,16 +24,6 @@ class GameScreen extends StatefulWidget {
 }
 
 class _GameScreenState extends State<GameScreen> with CustomTheme {
-  var nickPlayer1;
-  var nickPlayer2;
-
-  @override
-  void initState() {
-    nickPlayer1 = widget.nickPlayer1;
-    nickPlayer2 = widget.nickPlayer2;
-    super.initState();
-  }
-
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
@@ -86,13 +76,15 @@ class _GameScreenState extends State<GameScreen> with CustomTheme {
                   Players(
                       isPlayerTwoBot: widget.botPlayer,
                       difficulty: widget.difficultyLevel,
-                      nickPlayer1: nickPlayer1,
-                      nickPlayer2: nickPlayer2),
+                      nickPlayer1: widget.nickPlayer1,
+                      nickPlayer2: widget.nickPlayer2),
                   SizedBox(
                     width: size.width,
                   ),
                   Bord(
                     widget.botPlayer,
+                    widget.nickPlayer1,
+                    widget.nickPlayer2,
                     difficultyLevel: widget.difficultyLevel,
                   ),
                 ],

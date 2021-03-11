@@ -3,14 +3,14 @@ import 'package:flutter/material.dart';
 import 'package:tictactoe/components/BotScreen/BotOption.dart';
 import 'package:tictactoe/helpers/CustomTheme.dart';
 import 'package:tictactoe/helpers/particles.dart';
-import 'package:tictactoe/screens/GameScreen.dart';
+import 'package:tictactoe/view/GameScreen.dart';
 
 class BotScreen extends StatefulWidget {
   @override
-  _BotScreenState createState() => _BotScreenState();
+  _Botviewtate createState() => _Botviewtate();
 }
 
-class _BotScreenState extends State<BotScreen> with CustomTheme {
+class _Botviewtate extends State<BotScreen> with CustomTheme {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;

@@ -15,5 +15,7 @@ class UpdateBord extends BordState {
 class GameResult extends BordState {
   final int result;
   final List<int> bordState;
-  GameResult(this.bordState, {this.result});
+  final bool playerOneTurn;
+
+  GameResult(this.bordState, {this.result, this.playerOneTurn});
 }

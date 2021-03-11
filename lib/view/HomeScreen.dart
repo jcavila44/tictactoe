@@ -4,15 +4,11 @@ import 'package:tictactoe/helpers/CustomTheme.dart';
 import 'package:tictactoe/theme/theme.dart';
 import 'package:tictactoe/components/InputsPlayer.dart';
 import 'package:tictactoe/components/home_play_button.dart';
-import 'package:tictactoe/helpers/particles.dart';
-import 'package:tictactoe/screens/BotScreen.dart';
-import 'package:tictactoe/components/homeScreen/EntryText.dart';
-import 'package:tictactoe/components/homeScreen/GameOption.dart';
-import 'package:tictactoe/screens/GameScreen.dart';
+import 'package:tictactoe/view/GameScreen.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
-  _HomeScreenState createState() => _HomeScreenState();
+  _Homeviewtate createState() => _Homeviewtate();
 }
 
 final _formKey = GlobalKey<FormState>();
@@ -24,7 +20,7 @@ var _nickPlayer2;
 final nick1 = TextEditingController();
 final nick2 = TextEditingController();
 
-class _HomeScreenState extends State<HomeScreen> with CustomTheme {
+class _Homeviewtate extends State<HomeScreen> with CustomTheme {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

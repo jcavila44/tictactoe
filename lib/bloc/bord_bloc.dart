@@ -31,13 +31,15 @@ class BordBloc extends Bloc<BordEvent, BordState> {
       updateBord(event.index);
       winner = checkWinner(_bordState);
       if (winner != null) {
-        yield GameResult(_bordState, result: winner);
+        yield GameResult(_bordState,
+            result: winner, playerOneTurn: playerOneTurn);
       } else
         yield UpdateBord(bordState: _bordState);
     }
   }
 
   void updateBord(int index) {
+    // print("playerOneTurn" + playerOneTurn.toString());
     if (playerOneTurn && _bordState[index] != 1 && _bordState[index] != 0) {
       _bordState[index] = 0;
       playerOneTurn = false;

@@ -4,12 +4,15 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tictactoe/bloc/bord_bloc.dart';
 
 import 'package:tictactoe/helpers/CustomTheme.dart';
-import 'package:tictactoe/screens/ResultScren.dart';
+import 'package:tictactoe/view/ResultScren.dart';
 
 class Bord extends StatefulWidget {
   final bool botPlayer;
   final int difficultyLevel;
-  Bord(this.botPlayer, {this.difficultyLevel});
+  final String nickPlayer1;
+  final String nickPlayer2;
+  Bord(this.botPlayer, this.nickPlayer1, this.nickPlayer2,
+      {this.difficultyLevel});
   @override
   _BordState createState() => _BordState();
 }
@@ -41,14 +44,19 @@ class _BordState extends State<Bord> with CustomTheme {
             return buildBord(value);
           } else if (state is GameResult) {
             final value = state.bordState;
+            final playerOneTurn = state.playerOneTurn;
             Future.delayed(
               Duration(milliseconds: 150),
               () {
                 Navigator.push(
                   context,
                   CupertinoPageRoute(
-                    builder: (c) => Results(result: state.result,)
-                  ),
+                      builder: (c) => Results(
+                            result: state.result,
+                            turn: playerOneTurn,
+                            nickPlayer1: widget.nickPlayer1,
+                            nickPlayer2: widget.nickPlayer2,
+                          )),
                 );
               },
             );
@@ -76,6 +84,7 @@ class _BordState extends State<Bord> with CustomTheme {
   }
 
   Widget buildBox(int index, int value) {
+    // print("Valor agregado" + value.toString() + " index" + index.toString());
     return GestureDetector(
       onTap: () => bordBloc.add(Tap(index: index)),
       child: Container(

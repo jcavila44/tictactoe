@@ -2,11 +2,16 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:tictactoe/helpers/CustomTheme.dart';
 import 'package:tictactoe/helpers/particles.dart';
-import 'package:tictactoe/screens/HomeScreen.dart';
+import 'package:tictactoe/view/HomeScreen.dart';
 
 class Results extends StatefulWidget {
   final int result;
-  Results({@required this.result});
+  final bool turn;
+  final String nickPlayer1;
+  final String nickPlayer2;
+
+  Results(
+      {@required this.result, this.turn, this.nickPlayer1, this.nickPlayer2});
   @override
   _ResultsState createState() => _ResultsState();
 }
@@ -17,15 +22,16 @@ class _ResultsState extends State<Results> with CustomTheme {
 
   @override
   void initState() {
+    print("resultado" + widget.result.toString());
     if (widget.result == 1) {
       winningImage = "assets/win.png";
-      winningText = "YOU WON!";
+      winningText = "Ganador: " + widget.nickPlayer1;
     } else if (widget.result == -1) {
-      winningImage = "assets/loos.png";
-      winningText = "YOU LOST!";
+      winningImage = "assets/win.png";
+      winningText = "Ganador: " + widget.nickPlayer2;
     } else {
       winningImage = "assets/draw.png";
-      winningText = "IT'S A DRAW!";
+      winningText = "Empate!";
     }
     super.initState();
   }
