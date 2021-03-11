@@ -3,18 +3,19 @@ import 'package:tictactoe/bloc/bord_bloc.dart';
 
 void main() {
   group('Players', () {
-    test('Test un jugador', () {
+    test('Test turno jugador X', () {
       final player = BordBloc();
 
-      player.updateBord(0);
+      player.playerOneTurn = false;
+      player.updateBord(2);
 
       expect(player.playerOneTurn, true);
     });
 
-    test('Test dos jugadores', () {
+    test('Test turno jugador O', () {
       final player = BordBloc();
 
-      player.updateBord(2);
+      player.updateBord(1);
 
       expect(player.playerOneTurn, false);
     });
