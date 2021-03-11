@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:tictactoe/components/InputsPlayer.dart';
 import 'package:tictactoe/components/home_play_button.dart';
 import 'package:tictactoe/theme/theme.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 import 'GameScreen.dart';
 // import 'package:tictactoe/view/start_view.dart';
@@ -74,14 +75,26 @@ class _FormViewState extends State<FormView> {
                                 _nickPlayer2 = nick2.text;
                               });
 
-                              Navigator.of(context).push(
-                                CupertinoPageRoute(
-                                  builder: (context) => GameScreen(
-                                      secondPlayer: "Player 2",
-                                      nickPlayer1: _nickPlayer1,
-                                      nickPlayer2: _nickPlayer2),
-                                ),
-                              );
+                              if (_nickPlayer1 != '' && _nickPlayer2 != '') {
+                                Navigator.of(context).push(
+                                  CupertinoPageRoute(
+                                    builder: (context) => GameScreen(
+                                        secondPlayer: "Player 2",
+                                        nickPlayer1: _nickPlayer1,
+                                        nickPlayer2: _nickPlayer2),
+                                  ),
+                                );
+                              } else {
+                                Fluttertoast.showToast(
+                                    msg:
+                                        "Los Nick jugador #1 y Nick jugador #2 deben estar llenos.",
+                                    toastLength: Toast.LENGTH_SHORT,
+                                    gravity: ToastGravity.CENTER,
+                                    timeInSecForIosWeb: 1,
+                                    backgroundColor: Colors.red,
+                                    textColor: Colors.white,
+                                    fontSize: 18.0);
+                              }
                             },
                           ),
                         ],
