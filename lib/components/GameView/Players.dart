@@ -89,7 +89,7 @@ class _PlayersState extends State<Players> with CustomTheme {
           Text(
             (isPlayerOne) ? playerOneName : playerTwoName,
             style: TextStyle(
-              fontFamily: "acme",
+              fontFamily: 'acme',
               fontSize: 20,
               color: playerText,
             ),

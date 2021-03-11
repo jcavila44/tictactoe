@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'dart:math';
 import '../bloc/helpers.dart';
 import 'package:bloc/bloc.dart';
 import 'package:meta/meta.dart';
@@ -7,7 +6,7 @@ part 'bord_event.dart';
 part 'bord_state.dart';
 
 class BordBloc extends Bloc<BordEvent, BordState> {
-  List<int> _bordState = [55, 55, 55, 55, 55, 55, 55, 55, 55];
+  final List<int> _bordState = [55, 55, 55, 55, 55, 55, 55, 55, 55];
   bool playerOneTurn = true;
   int currentMove = 0;
   int winner;
@@ -28,8 +27,9 @@ class BordBloc extends Bloc<BordEvent, BordState> {
       if (winner != null) {
         yield GameResult(_bordState,
             result: winner, playerOneTurn: playerOneTurn);
-      } else
+      } else {
         yield UpdateBord(bordState: _bordState);
+      }
     }
   }
 

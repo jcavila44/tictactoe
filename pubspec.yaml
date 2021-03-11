@@ -20,6 +20,7 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   pedantic: ^1.11.0
+  test:
   
   flutter_launcher_icons:
 
