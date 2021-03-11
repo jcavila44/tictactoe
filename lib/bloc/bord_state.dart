@@ -4,7 +4,7 @@ part of 'bord_bloc.dart';
 abstract class BordState {}
 
 class BordInitial extends BordState {
-  final List<int> bord = [5, 5, 5, 5, 5, 5, 5, 5, 5];
+  final List<int> bord = [55, 55, 55, 55, 55, 55, 55, 55, 55];
 }
 
 class UpdateBord extends BordState {
@@ -15,5 +15,7 @@ class UpdateBord extends BordState {
 class GameResult extends BordState {
   final int result;
   final List<int> bordState;
-  GameResult(this.bordState, {this.result});
+  final bool playerOneTurn;
+
+  GameResult(this.bordState, {this.result, this.playerOneTurn});
 }

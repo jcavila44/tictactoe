@@ -1,27 +1,26 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:tictactoe/helpers/CustomTheme.dart';
+import 'package:tictactoe/theme/theme.dart';
 import 'package:tictactoe/components/InputsPlayer.dart';
 import 'package:tictactoe/components/home_play_button.dart';
-import 'package:tictactoe/theme/theme.dart';
+import 'package:tictactoe/view/GameScreen.dart';
 
-import 'GameScreen.dart';
-// import 'package:tictactoe/view/start_view.dart';
-
-class FormView extends StatefulWidget {
+class HomeScreen extends StatefulWidget {
   @override
-  _FormViewState createState() => _FormViewState();
+  _Homeviewtate createState() => _Homeviewtate();
 }
 
-class _FormViewState extends State<FormView> {
-  final _formKey = GlobalKey<FormState>();
-  FocusNode focusNode;
+final _formKey = GlobalKey<FormState>();
+FocusNode focusNode;
 
-  var _nickPlayer1;
-  var _nickPlayer2;
+var _nickPlayer1;
+var _nickPlayer2;
 
-  final nick1 = TextEditingController();
-  final nick2 = TextEditingController();
+final nick1 = TextEditingController();
+final nick2 = TextEditingController();
 
+class _Homeviewtate extends State<HomeScreen> with CustomTheme {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

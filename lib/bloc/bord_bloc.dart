@@ -1,14 +1,13 @@
 import 'dart:async';
-//import 'dart:math';
+import 'dart:math';
 import '../bloc/helpers.dart';
 import 'package:bloc/bloc.dart';
 import 'package:meta/meta.dart';
-
 part 'bord_event.dart';
 part 'bord_state.dart';
 
 class BordBloc extends Bloc<BordEvent, BordState> {
-  final List<int> _bordState = [5, 5, 5, 5, 5, 5, 5, 5, 5];
+  List<int> _bordState = [55, 55, 55, 55, 55, 55, 55, 55, 55];
   bool playerOneTurn = true;
   int currentMove = 0;
   int winner;
@@ -27,15 +26,18 @@ class BordBloc extends Bloc<BordEvent, BordState> {
       updateBord(event.index);
       winner = checkWinner(_bordState);
       if (winner != null) {
-        yield GameResult(_bordState, result: winner);
-      } else {
+        yield GameResult(_bordState,
+            result: winner, playerOneTurn: playerOneTurn);
+      } else
         yield UpdateBord(bordState: _bordState);
-      }
     }
   }
 
   void updateBord(int index) {
-    if (_bordState[index] != 0 && _bordState[index] != 1) {
+    if (playerOneTurn && _bordState[index] != 1 && _bordState[index] != 0) {
+      _bordState[index] = 0;
+      playerOneTurn = false;
+    } else if (_bordState[index] != 0 && _bordState[index] != 1) {
       _bordState[index] = 1;
       playerOneTurn = true;
     }
