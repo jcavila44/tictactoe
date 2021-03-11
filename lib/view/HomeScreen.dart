@@ -71,6 +71,9 @@ class _Homeviewtate extends State<HomeScreen> with CustomTheme {
                               setState(() {
                                 _nickPlayer1 = nick1.text;
                                 _nickPlayer2 = nick2.text;
+
+                                nick1.clear();
+                                nick2.clear();
                               });
 
                               Navigator.of(context).push(
