@@ -2,7 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tictactoe/bloc/bord_bloc.dart';
-
 import 'package:tictactoe/helpers/CustomTheme.dart';
 import 'package:tictactoe/view/ResultScren.dart';
 
@@ -79,7 +78,6 @@ class _BordState extends State<Bord> with CustomTheme {
   }
 
   Widget buildBox(int index, int value) {
-    // print("Valor agregado" + value.toString() + " index" + index.toString());
     return GestureDetector(
       onTap: () => bordBloc.add(Tap(index: index)),
       child: Container(

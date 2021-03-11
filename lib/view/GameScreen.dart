@@ -21,32 +21,8 @@ class _GameScreenState extends State<GameScreen> with CustomTheme {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     return WillPopScope(
-      onWillPop: () => showDialog<bool>(
-        context: context,
-        builder: (context) {
-          return AlertDialog(
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(15),
-            ),
-            elevation: 5,
-            title: Text('Warning'),
-            content: Text('Do you really want to quit?'),
-            actions: [
-              FlatButton(
-                child: Text('Yes'),
-                onPressed: () {
-                  Navigator.of(context).popUntil((route) => route.isFirst);
-                  return true;
-                },
-              ),
-              FlatButton(
-                child: Text('No'),
-                onPressed: () => Navigator.pop(context, false),
-              ),
-            ],
-          );
-        },
-      ),
+      // ignore: missing_return
+      onWillPop: () {},
       child: Material(
         child: Stack(
           children: [
